@@ -175,8 +175,10 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
             if (table[index] == null) {
                 System.out.println(" ["+index+"]"+"[null]");
             } else {
+                System.out.print(" ["+index+"]");
                 for (Entry entry : table[index]) {
-                    System.out.print(" ["+index+"]"+ entry.toString() + "→");
+
+                    System.out.print(entry.toString() + "→");
                 }
                 System.out.println();
             }
