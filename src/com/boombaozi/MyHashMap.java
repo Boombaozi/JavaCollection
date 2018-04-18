@@ -1,5 +1,6 @@
 package com.boombaozi;
 
+import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.util.Set;
 
@@ -102,7 +103,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
                 if (entry.getKey().equals(key)) {
                     return entry.getValue();
                 } else {
-                    return null;
+                    continue;
                 }
             }
         } else {
@@ -113,27 +114,44 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
     @Override
     public V put(K key, V value) {
-
         int index = hash(key.hashCode());
-
         if (table[index] == null) {
             table[index] = new LinkedList<Entry<K, V>>();
         }
+
 
         if (get(key) != null) {
             for (Entry<K, V> entry : table[index]) {
                 if (entry.getKey().equals(key)) {
                     V oleValue = entry.getValue();
                     entry.value = value;
+                    System.out.println("table[" + index + "] get new value(" + key + "," + value + ")");
                     return oleValue;
                 }
             }
         } else {
-
-
             table[index].add(new Entry(key, value));
             size++;
             System.out.println("table[" + index + "] add new Entry(" + key + "," + value + ")");
+        }
+
+        if ((float) size / (float) capacity > loadFactorThreshold) {
+            System.out.println("create a new table");
+
+            LinkedList<Entry<K, V>>[] table1 = new LinkedList[capacity * 2];
+            capacity=capacity*2;
+
+            for (int i = 0; i < table.length; i++) {
+                if(table[i]==null) continue;
+                for (Entry entry : table[i]) {
+                   int index1= hash(entry.getKey().hashCode());
+
+                   table1[index1]= new LinkedList<>();
+                   table1[index1].add(entry);
+                    System.out.println("new table[" + index1 + "] get  Entry(" + key + "," + value + ")");
+                }
+            }
+            table=table1;
         }
 
 
@@ -148,7 +166,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
                 if (entry.getKey() == key) {
                     table[index].remove(entry);
                     size--;
-                    System.out.println("table[" + index + "] remove Entry(" + key+ ")");
+                    System.out.println("table[" + index + "] remove Entry(" + key + ")");
                     break;
                 }
             }
@@ -168,14 +186,18 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
     public void show() {
         System.out.println("───────────────────────");
-        float lamda=size/capacity;
-        System.out.println(" length = " + capacity+"  rehash :"+ loadFactorThreshold);
-        System.out.println(" size = " +size +"  lamda :"+lamda);
+
+
+        float lamda = (float) size / (float) capacity;
+
+
+        System.out.println(" length = " + capacity + "  rehash :" + loadFactorThreshold);
+        System.out.println(" size = " + size + "  lamda :" + lamda);
         for (int index = 0; index < table.length; index++) {
             if (table[index] == null) {
-                System.out.println(" ["+index+"]"+"[null]");
+                System.out.println(" [" + index + "]" + "[null]");
             } else {
-                System.out.print(" ["+index+"]");
+                System.out.print(" [" + index + "]");
                 for (Entry entry : table[index]) {
 
                     System.out.print(entry.toString() + "→");

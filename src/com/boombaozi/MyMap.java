@@ -10,15 +10,40 @@ import java.util.Set;
  **/
 public interface MyMap<K,V> {
 
+
+
+    /**
+    * @description: clear the map
+    **/
     public void clear();
+
+    /**
+    * @description: return true if this map contains the key
+    **/
 
     public  boolean containsKey(K key);
 
+    /**
+    * @description:  return true if this map contains the value
+    **/
+
     public boolean containsValue(V value);
+
+    /**
+    * @description:   return true if this map doesn't contain any elements
+    **/
 
     public boolean isEmpty();
 
+    /**
+    * @description:  return this map's size
+    **/
+
     public int size();
+
+    /**
+    * @description:   return value by key
+    **/
 
     public  V get(K key);
 
