@@ -1,4 +1,4 @@
-package com.boombaozi;
+package MyCollection;
 
 /**
  * @program: myCollection

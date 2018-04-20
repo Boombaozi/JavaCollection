@@ -1,4 +1,4 @@
-package com.boombaozi;
+package MyCollection;
 
 /**
  * @program: myCollection
@@ -32,5 +32,5 @@ public interface MyList<E> extends Iterable<E> {
 
   //  public Object set(int index,E e);
 
-
+    public void show();
 }

@@ -1,8 +1,6 @@
-package com.boombaozi;
+package MyCollection;
 
-import java.text.DecimalFormat;
 import java.util.LinkedList;
-import java.util.Set;
 
 /**
  * @program: myCollection
@@ -43,7 +41,15 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
     @Override
     public void clear() {
-
+        for (int i = 0; i <table.length ; i++) {
+            if(table[i]==null) continue;
+            for(Entry entry : table[i]){
+                table[i].remove();
+            }
+            table[i]=null;
+            size=0;
+        }
+        System.out.println("table clear");
     }
 
     @Override
@@ -119,7 +125,6 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
             table[index] = new LinkedList<Entry<K, V>>();
         }
 
-
         if (get(key) != null) {
             for (Entry<K, V> entry : table[index]) {
                 if (entry.getKey().equals(key)) {
@@ -139,22 +144,20 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
             System.out.println("create a new table");
 
             LinkedList<Entry<K, V>>[] table1 = new LinkedList[capacity * 2];
-            capacity=capacity*2;
+            capacity = capacity * 2;
 
             for (int i = 0; i < table.length; i++) {
-                if(table[i]==null) continue;
+                if (table[i] == null) continue;
                 for (Entry entry : table[i]) {
-                   int index1= hash(entry.getKey().hashCode());
+                    int index1 = hash(entry.getKey().hashCode());
 
-                   table1[index1]= new LinkedList<>();
-                   table1[index1].add(entry);
-                    System.out.println("new table[" + index1 + "] get  Entry(" + key + "," + value + ")");
+                    table1[index1] = new LinkedList<>();
+                    table1[index1].add(entry);
+                    System.out.println("new table[" + index1 + "] get  Entry(" + entry.key + "," + entry.value + ")");
                 }
             }
-            table=table1;
+            table = table1;
         }
-
-
         return value;
     }
 
@@ -181,6 +184,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     private static int supplementalHash(int h) {
         h ^= (h >>> 20) ^ (h >>> 12);
         return h ^ (h >>> 7) ^ (h >>> 4);
+//        return h;
     }
 
 
