@@ -1,7 +1,7 @@
-# myCollection
 
 
-自己实现的一个简单的  Java Collections Framework
+
+# 自己实现的一个简单  Java Collections Framework
 
 
 interface   MyList 
