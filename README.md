@@ -1,7 +1,7 @@
 
 
 
-自己实现的一个简单  Java Collections Framework
+自己实现一个简单的  Java Collections Framework
 =============================================
 
 目前只完成了 ArrayList , HashMap ,HashSet ,持续更新中..
