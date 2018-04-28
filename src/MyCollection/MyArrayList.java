@@ -22,6 +22,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         list = (E[]) new Object[capacity];
     }
 
+    //自定义初始化大小
     public MyArrayList(int capacity) {
         this.capacity = capacity;
         list = (E[]) new Object[capacity];
@@ -38,7 +39,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         }
         //check this size
         if (size >= capacity) {
-            E[] list2 = (E[]) new Object[capacity * 2];
+            E[] list2 = (E[]) new Object[capacity * 2+1];
             capacity = capacity * 2;
             for (int i = 0; i < list.length; i++) {
                 list2[i] = list[i];
@@ -70,6 +71,10 @@ public class MyArrayList<E> extends MyAbstractList<E> {
 
     @Override
     public boolean contains(E e) {
+        for (int i = 0; i <size ; i++) {
+           if (list[i]==e)
+               return true;
+        }
         return false;
     }
 
@@ -85,6 +90,17 @@ public class MyArrayList<E> extends MyAbstractList<E> {
                 return i;
         }
         return 0;
+    }
+
+    @Override
+    public int lastIndexOf(E e){
+
+        for(int i=size-1; i>=0;i--){
+            if(list[i]==e){
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -104,9 +120,19 @@ public class MyArrayList<E> extends MyAbstractList<E> {
     }
 
     @Override
+    public E set(int index, E e) {
+        checkIndex(index);
+        E old=list[index];
+        list[index]=e;
+        return old;
+    }
+
+    @Override
     public Iterator<E> iterator() {
         return null;
     }
+
+
 
     private void checkIndex(int index) {
         System.out.println(size);

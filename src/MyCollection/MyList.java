@@ -22,7 +22,7 @@ public interface MyList<E> extends Iterable<E> {
 
     public boolean isEmpty();
 
-  //   public int lastIndexOf(E e);
+     public int lastIndexOf(E e);
 
     public boolean remove(E e);
 
@@ -30,7 +30,7 @@ public interface MyList<E> extends Iterable<E> {
 
     public int size();
 
-  //  public Object set(int index,E e);
+    public E set(int index,E e);
 
     public void show();
 }

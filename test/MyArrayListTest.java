@@ -16,6 +16,12 @@ public class MyArrayListTest {
         }
         s.clear();
         s.show();
+        s.add("sd");
+        s.add("sf");
+        s.add("sd");
+        s.add("sf");
+        System.out.println(s.indexOf("sf"));
+        s.show();
 
     }
 }
