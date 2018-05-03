@@ -8,10 +8,10 @@ import java.util.Iterator;
  * @author: boombaozi.com
  * @create: 2018-04
  **/
-public class MyLinkedList<E> extends MyAbstractList<E>{
+public class MyLinkedList<E> extends MyAbstractList<E>
+                             implements MyList<E>, MyQueue<E>{
     private Node<E> head;
     private Node<E> tail;
-
 
     @Override
     public void add(int index, E e) {
@@ -79,7 +79,15 @@ public class MyLinkedList<E> extends MyAbstractList<E>{
 
 
     public void addFirst(E e){
-
+       Node<E> node=new Node<>(e);
+       if(head==null) {
+        head=tail=node;
+        size++;
+       }else {
+           node.next = head;
+           head = node;
+           size++;
+       }
     }
 
     public void addLast(E e){
@@ -92,6 +100,7 @@ public class MyLinkedList<E> extends MyAbstractList<E>{
         }
         size++;
     }
+
     public E getFirst(){
         if(head==null) {
             return null;
@@ -109,7 +118,33 @@ public class MyLinkedList<E> extends MyAbstractList<E>{
     public E removeFirst(){
         return null;
     }
+
     public E removeLast(){
+        return null;
+    }
+
+    @Override
+    public boolean offer(E e) {
+        return false;
+    }
+
+    @Override
+    public E remove() {
+        return null;
+    }
+
+    @Override
+    public E poll() {
+        return null;
+    }
+
+    @Override
+    public E element() {
+        return null;
+    }
+
+    @Override
+    public E peek() {
         return null;
     }
 
@@ -120,4 +155,5 @@ public class MyLinkedList<E> extends MyAbstractList<E>{
             this.element=element;
         }
     }
+
 }
