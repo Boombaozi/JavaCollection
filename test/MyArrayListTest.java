@@ -17,9 +17,8 @@ public class MyArrayListTest {
         s.clear();
         s.show();
         s.add("sd");
-        s.add("sf");
-        s.add("sd");
-        s.add("sf");
+        s.add(1,"bb");
+        s.indexOf("bb");
         System.out.println(s.indexOf("sf"));
         s.show();
 

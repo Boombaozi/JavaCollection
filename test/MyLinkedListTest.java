@@ -12,19 +12,28 @@ import java.util.Queue;
  **/
 public class MyLinkedListTest {
     public static void main(String[] args) {
-        MyLinkedList<Integer> list=new MyLinkedList<>();
+        MyLinkedList<Integer> list = new MyLinkedList<>();
 
         list.addFirst(3);
         list.addFirst(2);
         list.addFirst(1);
-         list.addLast(11);
-         list.addLast(22);
-         list.addLast(33);
+        list.addLast(11);
+        list.addLast(22);
+        list.addLast(33);
+        list.add(6,111);
+        list.add(0,111);
+        list.add(3,111);
+        System.out.println(list.get(0));
+        System.out.println(list.get(2));
+        System.out.println(list.get(5));
+        System.out.println("indexof :"+list.indexOf(33));
+        System.out.println(list.contains(3));
+        System.out.println(list.contains(34));
 
-
-//        Queue<Integer> queue=new LinkedList<>();
-//        queue.peek();
         list.show();
-
+        list.clear();
+        list.show();
     }
+
+
 }
