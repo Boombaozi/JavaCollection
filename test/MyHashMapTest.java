@@ -2,7 +2,9 @@ import MyCollection.MyHashMap;
 import MyCollection.MyMap;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @program: myCollection
@@ -44,7 +46,5 @@ public class MyHashMapTest {
        m.show();
        Integer[] a;
        a=new Integer[2];
-
-
     }
 }

@@ -6,7 +6,7 @@ package MyCollection;
  * @author: boombaozi.com
  * @create: 2018-04-28 12
  **/
-public interface MySet<E> extends java.lang.Iterable<E> {
+public interface MySet<E> extends Iterable {
 
     public void clear();
 

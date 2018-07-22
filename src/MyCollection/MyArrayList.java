@@ -32,7 +32,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         list = e;
     }
 
-    @Override
+
     public void add(int index, E e) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("index :" + index + "out of bounds");
@@ -61,7 +61,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
 
     }
 
-    @Override
+
     public void clear() {
         for (int i = size; i >=0 ; i--) {
             list[i]=null;
@@ -69,7 +69,6 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         size=0;
     }
 
-    @Override
     public boolean contains(E e) {
         for (int i = 0; i <size ; i++) {
            if (list[i]==e)
@@ -78,12 +77,12 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         return false;
     }
 
-    @Override
+
     public E get(int index) {
         return list[index];
     }
 
-    @Override
+
     public int indexOf(E e) {
         for (int i = 0; i < size; i++) {
             if (list[i] == e)
@@ -92,7 +91,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         return 0;
     }
 
-    @Override
+
     public int lastIndexOf(E e){
 
         for(int i=size-1; i>=0;i--){
@@ -103,7 +102,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         return -1;
     }
 
-    @Override
+
     public E remove(int index) {
         checkIndex(index);
         E s=get(index);
@@ -119,7 +118,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
           return  s;
     }
 
-    @Override
+
     public E set(int index, E e) {
         checkIndex(index);
         E old=list[index];
@@ -127,7 +126,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         return old;
     }
 
-    @Override
+
     public Iterator<E> iterator() {
         return null;
     }

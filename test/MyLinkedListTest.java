@@ -12,7 +12,7 @@ import java.util.Queue;
  **/
 public class MyLinkedListTest {
     public static void main(String[] args) {
-        MyLinkedList<Integer> list = new MyLinkedList<>();
+        MyLinkedList<Integer> list = new MyLinkedList<Integer>();
 
         list.addFirst(3);
         list.addFirst(2);

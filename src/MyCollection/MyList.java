@@ -6,7 +6,7 @@ package MyCollection;
  * @author: boombaozi.com
  * @create: 2018-04-17 16
  **/
-public interface MyList<E> extends Iterable<E> {
+public interface MyList<E> extends Iterable {
 
     public void add(E e);
 

@@ -9,7 +9,6 @@ package MyCollection;
 public abstract class MyAbstractList<E> implements MyList<E>{
     protected int size=0;
 
-
     protected MyAbstractList(){}
 
 

@@ -6,7 +6,7 @@ package MyCollection;
  * @author: boombaozi.com
  * @create: 2018-05-03 23
  **/
-public interface MyQueue<E> extends Iterable<E>{
+public interface MyQueue<E> extends Iterable{
 
 //    boolean add(E e);
 

@@ -9,7 +9,7 @@ import MyCollection.MyList;
  **/
 public class MyArrayListTest {
     public static void main(String[] args) {
-        MyList<String> s = new MyArrayList<>();
+        MyList<String> s = new MyArrayList<String>();
         for (int i = 0; i < 100; i++) {
             s.add("" + i);
             s.show();

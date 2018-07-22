@@ -39,7 +39,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         table = new LinkedList[capacity];
     }
 
-    @Override
+
     public void clear() {
         for (int i = 0; i <table.length ; i++) {
             if(table[i]==null) continue;
@@ -52,7 +52,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         System.out.println("table clear");
     }
 
-    @Override
+
     public boolean containsKey(K key) {
 
         int index = hash(key.hashCode());
@@ -69,7 +69,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         return flag;
     }
 
-    @Override
+
     public boolean containsValue(V value) {
         boolean flag = false;
 
@@ -87,18 +87,18 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         return flag;
     }
 
-    @Override
+
     public boolean isEmpty() {
         return size == 0;
     }
 
-    @Override
+
     public int size() {
         return size;
     }
 
 
-    @Override
+
     public V get(K key) {
 
         int index = hash(key.hashCode());
@@ -118,7 +118,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         return null;
     }
 
-    @Override
+
     public V put(K key, V value) {
         int index = hash(key.hashCode());
         if (table[index] == null) {
@@ -151,7 +151,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
                 for (Entry entry : table[i]) {
                     int index1 = hash(entry.getKey().hashCode());
 
-                    table1[index1] = new LinkedList<>();
+                    table1[index1] = new LinkedList<Entry<K, V>>();
                     table1[index1].add(entry);
                     System.out.println("new table[" + index1 + "] get  Entry(" + entry.key + "," + entry.value + ")");
                 }
@@ -161,7 +161,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         return value;
     }
 
-    @Override
+
     public void remove(K key) {
         int index = hash(key.hashCode());
         if (table[index] != null) {

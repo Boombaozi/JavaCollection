@@ -1,5 +1,6 @@
 package MyCollection;
 
+
 import java.util.Iterator;
 
 /**
@@ -26,7 +27,7 @@ public class MyLinkedList<E> extends MyAbstractList<E>
             addFirst(e);
             return;
         }
-        Node<E> newnode=new Node<>(e);
+        Node<E> newnode=new Node<E>(e);
         Node<E> temp = head;
         int sum = 0;
         while (true) {
@@ -144,14 +145,14 @@ public class MyLinkedList<E> extends MyAbstractList<E>
         }
     }
 
-    @Override
+
     public Iterator<E> iterator() {
         return null;
     }
 
 
     public void addFirst(E e) {
-        Node<E> node = new Node<>(e);
+        Node<E> node = new Node<E>(e);
         if (head == null) {
             head = tail = node;
             size++;
@@ -163,7 +164,7 @@ public class MyLinkedList<E> extends MyAbstractList<E>
     }
 
     public void addLast(E e) {
-        Node<E> node = new Node<>(e);
+        Node<E> node = new Node<E>(e);
         if (tail == null) {
             head = tail = node;
         } else {
