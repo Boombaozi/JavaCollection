@@ -1,6 +1,5 @@
 package MyCollection;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -127,7 +126,7 @@ public class MyHashSet<E> implements MySet<E> {
     }
 
     @Override
-    public Iterator<E> iterator() {
+    public MyCollection.Iterator<E> iterator() {
         return null;
     }
 

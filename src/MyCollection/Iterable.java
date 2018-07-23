@@ -1,7 +1,5 @@
 package MyCollection;
 
-import java.util.Iterator;
-
 /**
  * @program: myCollection
  * @description:

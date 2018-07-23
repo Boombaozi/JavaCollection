@@ -1,6 +1,5 @@
 package MyCollection;
 
-import java.util.Iterator;
 
 /**
  * @program: myCollection
@@ -39,7 +38,7 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         }
         //check this size
         if (size >= capacity) {
-            E[] list2 = (E[]) new Object[capacity * 2+1];
+            E[] list2 = (E[]) new Object[capacity * 2 + 1];
             capacity = capacity * 2;
             for (int i = 0; i < list.length; i++) {
                 list2[i] = list[i];
@@ -63,16 +62,16 @@ public class MyArrayList<E> extends MyAbstractList<E> {
 
 
     public void clear() {
-        for (int i = size; i >=0 ; i--) {
-            list[i]=null;
+        for (int i = size; i >= 0; i--) {
+            list[i] = null;
         }
-        size=0;
+        size = 0;
     }
 
     public boolean contains(E e) {
-        for (int i = 0; i <size ; i++) {
-           if (list[i]==e)
-               return true;
+        for (int i = 0; i < size; i++) {
+            if (list[i] == e)
+                return true;
         }
         return false;
     }
@@ -92,10 +91,10 @@ public class MyArrayList<E> extends MyAbstractList<E> {
     }
 
 
-    public int lastIndexOf(E e){
+    public int lastIndexOf(E e) {
 
-        for(int i=size-1; i>=0;i--){
-            if(list[i]==e){
+        for (int i = size - 1; i >= 0; i--) {
+            if (list[i] == e) {
                 return i;
             }
         }
@@ -105,32 +104,31 @@ public class MyArrayList<E> extends MyAbstractList<E> {
 
     public E remove(int index) {
         checkIndex(index);
-        E s=get(index);
+        E s = get(index);
         if (index == size - 1) {
             list[index] = null;
             size--;
         } else {
-            for (int i = index; i <size; i++) {
-                    list[i]=list[i+1];
+            for (int i = index; i < size; i++) {
+                list[i] = list[i + 1];
             }
             size--;
         }
-          return  s;
+        return s;
     }
 
 
     public E set(int index, E e) {
         checkIndex(index);
-        E old=list[index];
-        list[index]=e;
+        E old = list[index];
+        list[index] = e;
         return old;
     }
 
 
     public Iterator<E> iterator() {
-        return null;
+        return new Itr();
     }
-
 
 
     private void checkIndex(int index) {
@@ -148,4 +146,28 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         System.out.println();
         System.out.println("───────────────────────");
     }
+
+    private class Itr implements Iterator<E> {
+        int cursor;       // index of next element to return
+        int lastRet = -1; // index of last element returned; -1 if no such
+
+        Itr() {
+        }
+
+        //
+        public boolean hasNext() {
+            return cursor != size;
+        }
+
+        public E next() {
+            cursor += 1;
+            return list[cursor-1];
+        }
+
+        public void remove() {
+
+        }
+
+    }
+
 }

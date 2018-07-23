@@ -1,8 +1,6 @@
 package MyCollection;
 
 
-import java.util.Iterator;
-
 /**
  * @program: myCollection
  * @description: 实现了MyList 和 MyQueue接口
@@ -146,7 +144,7 @@ public class MyLinkedList<E> extends MyAbstractList<E>
     }
 
 
-    public Iterator<E> iterator() {
+    public MyCollection.Iterator<E> iterator() {
         return null;
     }
 
