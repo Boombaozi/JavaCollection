@@ -5,6 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class MyLinkedListTest {
+
+    MyLinkedList linkedList=new MyLinkedList();
+
     @Test
     public void add() throws Exception {
     }
@@ -43,6 +46,16 @@ public class MyLinkedListTest {
 
     @Test
     public void iterator() throws Exception {
+        for (int i = 0; i <30 ; i++) {
+            linkedList.add("ss"+i);
+        }
+        Iterator iterator=linkedList.iterator();
+
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+
     }
 
     @Test

@@ -144,10 +144,35 @@ public class MyLinkedList<E> extends MyAbstractList<E>
     }
 
 
-    public MyCollection.Iterator<E> iterator() {
-        return null;
+    public Iterator<E> iterator() {
+        return new Itr();
     }
+    private class Itr implements Iterator<E> {
+        int cursor;       // index of next element to return
+        int lastRet = -1; // index of last element returned; -1 if no such
+        Node<E> node=head;
+        Itr() {
+        }
 
+        //
+        public boolean hasNext() {
+            return cursor != size;
+        }
+
+        public E next() {
+            cursor +=1;
+            if(cursor==1){
+              return node.element;
+            }
+            node=node.next;
+            return node.element;
+        }
+
+        public void remove() {
+
+        }
+
+    }
 
     public void addFirst(E e) {
         Node<E> node = new Node<E>(e);
@@ -212,7 +237,6 @@ public class MyLinkedList<E> extends MyAbstractList<E>
     private static class Node<E> {
         E element;
         Node<E> next;
-
         public Node(E element) {
             this.element = element;
         }
