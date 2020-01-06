@@ -3,7 +3,6 @@
 
 自己实现一个简单的  Java Collections Framework
 =============================================
-test
 目前完成了 ArrayList ,LinkedList,HashMap,HashSet,Stack,Queue,持续更新中..
 
 接口
