@@ -32,6 +32,12 @@ public class MyHashMapTest {
 
     @Test
     public void put() throws Exception {
+        MyMap<String, Integer> m = new MyHashMap<>();
+      
+        for (int i = 0; i < 100; i++) {
+            m.put(String.valueOf(i) , i);
+        }
+        assertTrue(m.size()==100);
     }
 
     @Test

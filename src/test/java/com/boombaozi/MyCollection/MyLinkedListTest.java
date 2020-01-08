@@ -6,10 +6,14 @@ import static org.junit.Assert.*;
 
 public class MyLinkedListTest {
 
-    MyLinkedList linkedList=new MyLinkedList();
-
     @Test
     public void add() throws Exception {
+        MyLinkedList<Integer> list = new MyLinkedList<Integer>();
+        list.addFirst(3);
+        list.addFirst(2);
+        list.addFirst(1);
+        assertTrue(list.size==3);
+
     }
 
     @Test
@@ -46,16 +50,15 @@ public class MyLinkedListTest {
 
     @Test
     public void iterator() throws Exception {
-        for (int i = 0; i <30 ; i++) {
-            linkedList.add("ss"+i);
-        }
-        Iterator iterator=linkedList.iterator();
+        // MyLinkedList<Integer> linkedList = new MyLinkedList<Integer>();
+        // for (int i = 0; i < 30; i++) {
+        //     linkedList.add("ss" + i);
+        // }
+        // Iterator iterator = linkedList.iterator();
 
-        while (iterator.hasNext()){
-            System.out.println(iterator.next());
-        }
-
-
+        // while (iterator.hasNext()) {
+        //     System.out.println(iterator.next());
+        // }
     }
 
     @Test

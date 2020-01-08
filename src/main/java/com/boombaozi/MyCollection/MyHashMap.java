@@ -13,7 +13,6 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
     /**
      * @description: default initial capacity
      **/
-
     private static int DEFAULT_INITIAL_CAPACITY = 4;
 
     private static int MAXIMUM_CAPACITY = 1 << 30;

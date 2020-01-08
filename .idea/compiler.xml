@@ -7,10 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="javaCollection" />
+        <module name="JavaCollection" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="javaCollection" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>

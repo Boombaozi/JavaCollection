@@ -15,6 +15,13 @@ public class MyHashSetTest {
 
     @Test
     public void add() throws Exception {
+        MySet<Integer> set = new MyHashSet<>();
+        set.add(1);
+        set.add(1);
+        set.add(1);
+        set.add(2);
+
+        assertTrue(set.size()==2);
     }
 
     @Test

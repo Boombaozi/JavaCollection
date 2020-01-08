@@ -20,10 +20,11 @@ public class MyArrayList<E> extends MyAbstractList<E> {
         capacity = DEFAULT_INITIAL_CAPACITY;
         list = (E[]) new Object[capacity];
     }
-
+    
     //自定义初始化大小
     public MyArrayList(int capacity) {
         this.capacity = capacity;
+        // list = (E[]) new Object[capacity];
         list = (E[]) new Object[capacity];
     }
 

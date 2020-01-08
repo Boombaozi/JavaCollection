@@ -1,9 +1,15 @@
 package com.boombaozi.MyCollection;
 
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
+// static
 
+import org.junit.FixMethodOrder;
+
+
+@FixMethodOrder()
 public class MyArrayListTest {
 
     MyList<String> arrayList = new MyArrayList<String>();
@@ -63,13 +69,13 @@ public class MyArrayListTest {
 
     @Test
     public void iterator() throws Exception {
-        for (int i = 0; i < 30; i++) {
-            arrayList.add("s" + i);
-        }
-        Iterator iterator = arrayList.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+        // for (int i = 0; i < 30; i++) {
+        //     arrayList.add("s" + i);
+        // }
+        // Iterator iterator = arrayList.iterator();
+        // while (iterator.hasNext()) {
+        //     System.out.println(iterator.next());
+        // }
     }
 
     @Test
